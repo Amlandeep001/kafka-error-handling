@@ -1,4 +1,4 @@
-package com.javatechie.util;
+package com.kafka.retry.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
-import com.javatechie.dto.User;
+import com.kafka.retry.dto.User;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 

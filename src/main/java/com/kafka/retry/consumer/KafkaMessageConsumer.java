@@ -1,4 +1,4 @@
-package com.javatechie.consumer;
+package com.kafka.retry.consumer;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.javatechie.dto.User;
+import com.kafka.retry.dto.User;
 
 import lombok.extern.slf4j.Slf4j;
 

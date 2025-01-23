@@ -1,4 +1,4 @@
-package com.javatechie.publisher;
+package com.kafka.retry.publisher;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -7,7 +7,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 
-import com.javatechie.dto.User;
+import com.kafka.retry.dto.User;
 
 @Service
 public class KafkaMessagePublisher

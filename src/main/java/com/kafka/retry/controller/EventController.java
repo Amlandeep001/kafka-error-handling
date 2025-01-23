@@ -1,4 +1,4 @@
-package com.javatechie.controller;
+package com.kafka.retry.controller;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javatechie.dto.User;
-import com.javatechie.publisher.KafkaMessagePublisher;
-import com.javatechie.util.CsvReaderUtils;
+import com.kafka.retry.dto.User;
+import com.kafka.retry.publisher.KafkaMessagePublisher;
+import com.kafka.retry.util.CsvReaderUtils;
 
 @RestController
 @RequestMapping("/producer-app")

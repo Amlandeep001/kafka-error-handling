@@ -1,4 +1,4 @@
-package com.javatechie.dto;
+package com.kafka.retry.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

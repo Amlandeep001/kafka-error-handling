@@ -8,7 +8,7 @@
 		<version>3.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.javatechie</groupId>
+	<groupId>com.kafka.retry</groupId>
 	<artifactId>kafka-error-handling</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kafka-demo</name>
