@@ -21,13 +21,20 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class KafkaMessageConsumer
 {
+	private final ObjectMapper objectMapper;
+
+	public KafkaMessageConsumer(ObjectMapper objectMapper)
+	{
+		this.objectMapper = objectMapper;
+	}
+
 	@RetryableTopic(attempts = "4") // 3 topic N-1
-	@KafkaListener(topics = "${app.topic.name}", groupId = "javatechie-group")
+	@KafkaListener(topics = "${app.topic.name}", groupId = "${spring.kafka.consumer.groupId}")
 	public void consumeEvents(User user, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic, @Header(KafkaHeaders.OFFSET) long offset)
 	{
 		try
 		{
-			log.info("Received: {} from {} offset {}", new ObjectMapper().writeValueAsString(user), topic, offset);
+			log.info("Received: {} from {} offset {}", objectMapper.writeValueAsString(user), topic, offset);
 			// validate restricted IP before process the records
 			List<String> restrictedIpList = Stream.of("32.241.244.236", "15.55.49.164", "81.1.95.253", "126.130.43.183").collect(Collectors.toList());
 			if(restrictedIpList.contains(user.getIpAddress()))

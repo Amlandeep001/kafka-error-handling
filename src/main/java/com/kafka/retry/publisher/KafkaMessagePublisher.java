@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.kafka.retry.dto.User;
 
+import lombok.extern.log4j.Log4j2;
+
 @Service
+@Log4j2
 public class KafkaMessagePublisher
 {
 	private final KafkaTemplate<String, Object> kafkaTemplate;
@@ -30,19 +33,19 @@ public class KafkaMessagePublisher
 			{
 				if(ex == null)
 				{
-					System.out.println("Sent message=[" + user.toString() +
+					log.info("Sent message=[" + user.toString() +
 							"] with offset=[" + result.getRecordMetadata().offset() + "]");
 				}
 				else
 				{
-					System.out.println("Unable to send message=[" +
+					log.error("Unable to send message=[" +
 							user.toString() + "] due to : " + ex.getMessage());
 				}
 			});
 		}
 		catch(Exception ex)
 		{
-			System.out.println(ex.getMessage());
+			log.error(ex.getMessage());
 		}
 	}
 
